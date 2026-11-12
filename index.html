@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <!-- SEO -->
+  <title>Diego Hair & Co. | Cabeleireiro e Maquiagem em Pelotas, RS</title>
+  <meta name="description" content="Diego Hair & Co. em Pelotas, RS: cabelo e maquiagem de alto padrão. Escovas, penteados e maquiagem social com Paola Pinheiro. Agende seu horário.">
+  <link rel="canonical" href="https://SEU-DOMINIO.com.br/">
+  <meta name="robots" content="index, follow">
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <!-- Open Graph (compartilhamento) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Diego Hair & Co.">
+  <meta property="og:title" content="Diego Hair & Co. | Cabeleireiro e Maquiagem em Pelotas, RS">
+  <meta property="og:description" content="Escovas, penteados e maquiagem social e de noite em Pelotas, RS. Agende seu horário.">
+  <meta property="og:image" content="https://SEU-DOMINIO.com.br/salao.png">
+  <meta property="og:url" content="https://SEU-DOMINIO.com.br/">
+
+  <!-- Dados estruturados (Google) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "Diego Hair & Co.",
+    "description": "Cabelo e maquiagem de alto padrão com profissionais independentes em Pelotas, RS.",
+    "image": "https://SEU-DOMINIO.com.br/salao.png",
+    "url": "https://SEU-DOMINIO.com.br/",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Edifício Orbe, Sala 716, Parque Una",
+      "addressLocality": "Pelotas",
+      "addressRegion": "RS",
+      "addressCountry": "BR"
+    },
+    "sameAs": [
+      "https://instagram.com/diegohair.co",
+      "https://instagram.com/ppinheiro_beauty"
+    ]
+  }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            charcoal: '#2C2A29',
+            caramel: '#A66E45',
+            sand: '#EAE5DE',
+            offwhite: '#F9F8F6',
+            gold: '#C9A96E'
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'serif'],
+            sans: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body { font-family: Inter, sans-serif; }
+    .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+  </style>
+</head>
+
+<body class="bg-offwhite text-charcoal antialiased">
+
+  <!-- ============ HEADER FLUTUANTE ============ -->
+  <header id="header" class="fixed top-0 inset-x-0 z-50 bg-charcoal/70 backdrop-blur-md border-b border-white/10 transition-shadow duration-300">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#home" class="font-serif text-xl sm:text-2xl text-offwhite tracking-wide">
+        Diego <span class="text-gold italic">Hair &amp; Co.</span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-10 text-[11px] uppercase tracking-[0.25em] text-sand">
+        <a href="#home" class="hover:text-gold transition">Home</a>
+        <a href="#servicos" class="hover:text-gold transition">Serviços</a>
+        <a href="#artistas" class="hover:text-gold transition">Conheça os Artistas</a>
+        <a href="#faq" class="hover:text-gold transition">FAQ</a>
+      </nav>
+
+      <div class="flex items-center gap-2 sm:gap-3">
+        <button onclick="openBooking()" class="bg-caramel text-offwhite px-4 sm:px-6 py-2.5 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.25em] hover:bg-caramel/90 transition whitespace-nowrap">
+          Agendar Horário
+        </button>
+        <button id="menuBtn" onclick="toggleMenu()" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu" class="lg:hidden text-offwhite p-2 -mr-2">
+          <svg id="iconOpen" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h10"/></svg>
+          <svg id="iconClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu mobile -->
+    <div id="mobileMenu" class="lg:hidden hidden border-t border-white/10 bg-charcoal/95 backdrop-blur-md">
+      <nav class="flex flex-col px-5 py-6 gap-5 text-sm uppercase tracking-[0.25em] text-sand">
+        <a href="#home" onclick="closeMenu()">Home</a>
+        <a href="#servicos" onclick="closeMenu()">Serviços</a>
+        <a href="#artistas" onclick="closeMenu()">Conheça os Artistas</a>
+        <a href="#faq" onclick="closeMenu()">FAQ</a>
+      </nav>
+      <div class="px-5 pb-6">
+        <button onclick="closeMenu(); openBooking()" class="w-full bg-caramel text-offwhite py-3.5 text-xs uppercase tracking-[0.25em]">Agendar Horário</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section id="home" class="relative min-h-[100svh] flex items-center justify-center text-center pt-20 bg-charcoal overflow-hidden">
+    <img src="salao.png"
+         alt="Interior do salão Diego Hair & Co. em Pelotas"
+         class="absolute inset-0 w-full h-full object-cover opacity-50">
+    <div class="absolute inset-0 bg-charcoal/40"></div>
+
+    <div class="relative z-10 px-6 max-w-3xl">
+      <p class="text-gold uppercase tracking-[0.3em] text-[11px] mb-6">Pelotas · RS</p>
+      <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl text-offwhite leading-[1.05]">
+        Um coletivo de arte para <em class="text-gold">sua beleza</em>
+      </h1>
+      <p class="mt-6 text-sand/90 text-base sm:text-lg font-light max-w-xl mx-auto">
+        Cabelo e maquiagem com profissionais independentes, em um ambiente pensado para você.
+      </p>
+      <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+        <button onclick="openBooking()" class="bg-caramel text-offwhite px-8 py-4 text-xs uppercase tracking-[0.25em] hover:bg-caramel/90 transition">
+          Agendar Horário
+        </button>
+        <a href="https://wa.me/55XXXXXXXXXXX?text=Ol%C3%A1!%20Quero%20agendar%20um%20hor%C3%A1rio." target="_blank" rel="noopener" class="border border-gold text-gold px-8 py-4 text-xs uppercase tracking-[0.25em] hover:bg-gold hover:text-charcoal transition text-center">
+          Marcar pelo WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ARTISTAS ============ -->
+  <section id="artistas" class="py-20 lg:py-28 px-5 lg:px-8 bg-sand">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-caramel uppercase tracking-[0.3em] text-[11px] mb-3">Conheça os Artistas</p>
+        <h2 class="font-serif text-4xl sm:text-5xl">Profissionais independentes</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+        <!-- Diego -->
+        <article onclick="openProfile('diego')" onkeydown="if(event.key==='Enter')openProfile('diego')" tabindex="0" role="button" aria-label="Ver perfil de Diego, cabeleireiro"
+                 class="group cursor-pointer bg-offwhite p-8 sm:p-10 flex flex-col items-center text-center border border-charcoal/10 hover:border-caramel/60 transition">
+          <img src="diego.png" alt="Diego, cabeleireiro em Pelotas"
+               class="w-36 h-36 sm:w-44 sm:h-44 rounded-full object-cover ring-4 ring-sand mb-6 group-hover:ring-caramel/40 transition">
+          <h3 class="font-serif text-3xl">Diego</h3>
+          <p class="text-caramel text-[11px] uppercase tracking-[0.25em] mt-2">Cabeleireiro</p>
+          <p class="mt-2 text-sm text-charcoal/70">@diegohair.co</p>
+          <p class="mt-5 text-sm text-charcoal/75 leading-relaxed max-w-sm">
+            Escovas, penteados e transformações com acabamento impecável para o seu dia a dia e para eventos especiais.
+          </p>
+          <span class="mt-8 border border-charcoal px-7 py-3 text-[11px] uppercase tracking-[0.25em] group-hover:bg-charcoal group-hover:text-offwhite transition">
+            Ver perfil
+          </span>
+        </article>
+
+        <!-- Paola -->
+        <article onclick="openProfile('paola')" onkeydown="if(event.key==='Enter')openProfile('paola')" tabindex="0" role="button" aria-label="Ver perfil de Paola Pinheiro, maquiadora"
+                 class="group cursor-pointer bg-offwhite p-8 sm:p-10 flex flex-col items-center text-center border border-charcoal/10 hover:border-caramel/60 transition">
+          <img src="paola.png" alt="Paola Pinheiro, maquiadora em Pelotas"
+               class="w-36 h-36 sm:w-44 sm:h-44 rounded-full object-cover ring-4 ring-sand mb-6 group-hover:ring-caramel/40 transition">
+          <h3 class="font-serif text-3xl">Paola Pinheiro</h3>
+          <p class="text-caramel text-[11px] uppercase tracking-[0.25em] mt-2">Maquiadora</p>
+          <p class="mt-2 text-sm text-charcoal/70">@ppinheiro_beauty</p>
+          <p class="mt-5 text-sm text-charcoal/75 leading-relaxed max-w-sm">
+            Especialista em maquiagem com pele blindada, super resistente e com atendimento personalizado conforme o seu evento.
+          </p>
+          <span class="mt-8 border border-charcoal px-7 py-3 text-[11px] uppercase tracking-[0.25em] group-hover:bg-charcoal group-hover:text-offwhite transition">
+            Ver perfil
+          </span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVIÇOS ============ -->
+  <section id="servicos" class="py-20 lg:py-28 px-5 lg:px-8 bg-offwhite">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-caramel uppercase tracking-[0.3em] text-[11px] mb-3">Cardápio de Serviços</p>
+        <h2 class="font-serif text-4xl sm:text-5xl">Escolha o seu momento</h2>
+      </div>
+
+      <div class="mb-16">
+        <h3 class="font-serif text-2xl mb-6 pb-3 border-b border-caramel/40">Cabelo</h3>
+        <div id="grid-cabelo" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+      </div>
+
+      <div>
+        <h3 class="font-serif text-2xl mb-6 pb-3 border-b border-caramel/40">Maquiagem</h3>
+        <div id="grid-maquiagem" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq" class="py-20 px-5 lg:px-8 bg-sand">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-caramel uppercase tracking-[0.3em] text-[11px] mb-3">Dúvidas</p>
+        <h2 class="font-serif text-4xl sm:text-5xl">Perguntas frequentes</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="bg-offwhite p-6 border border-charcoal/10 group">
+          <summary class="cursor-pointer font-medium list-none flex justify-between items-center">Preciso agendar com antecedência?<span class="text-caramel group-open:rotate-45 transition text-2xl leading-none">+</span></summary>
+          <p class="mt-4 text-sm text-charcoal/75 leading-relaxed">Sim, recomendamos agendar com pelo menos 48 horas de antecedência, principalmente para noivas e eventos.</p>
+        </details>
+        <details class="bg-offwhite p-6 border border-charcoal/10 group">
+          <summary class="cursor-pointer font-medium list-none flex justify-between items-center">Posso escolher o profissional?<span class="text-caramel group-open:rotate-45 transition text-2xl leading-none">+</span></summary>
+          <p class="mt-4 text-sm text-charcoal/75 leading-relaxed">Sim. Cada profissional tem sua própria agenda, e você escolhe quem prefere no momento da reserva.</p>
+        </details>
+        <details class="bg-offwhite p-6 border border-charcoal/10 group">
+          <summary class="cursor-pointer font-medium list-none flex justify-between items-center">Como funciona o cancelamento?<span class="text-caramel group-open:rotate-45 transition text-2xl leading-none">+</span></summary>
+          <p class="mt-4 text-sm text-charcoal/75 leading-relaxed">Cancelamentos devem ser feitos com até 24 horas de antecedência, pelo Instagram ou WhatsApp do salão.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RODAPÉ ============ -->
+  <footer class="bg-charcoal text-sand/80 py-14 px-5 lg:px-8">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 text-center md:text-left">
+      <div>
+        <p class="font-serif text-2xl text-offwhite">Diego <span class="text-gold italic">Hair &amp; Co.</span></p>
+        <p class="text-xs mt-2 tracking-wide">Cabelo e maquiagem de alto padrão</p>
+      </div>
+      <div class="text-sm leading-relaxed">
+        <p class="text-[11px] uppercase tracking-[0.25em] text-gold mb-3">Endereço</p>
+        <p>Edifício Orbe, Sala 716</p>
+        <p>Parque Una · Pelotas, RS</p>
+      </div>
+      <div class="text-sm">
+        <p class="text-[11px] uppercase tracking-[0.25em] text-gold mb-3">Instagram</p>
+        <p><a href="https://instagram.com/diegohair.co" target="_blank" rel="noopener" class="hover:text-gold transition">@diegohair.co</a></p>
+        <p><a href="https://instagram.com/ppinheiro_beauty" target="_blank" rel="noopener" class="hover:text-gold transition">@ppinheiro_beauty</a></p>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto mt-12 pt-6 border-t border-white/10 text-center text-xs">
+      &copy; <span id="ano"></span> Diego Hair &amp; Co. Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <!-- ============ BARRA FIXA MOBILE ============ -->
+  <div class="fixed bottom-0 inset-x-0 z-40 md:hidden bg-charcoal/95 backdrop-blur-md border-t border-white/10 px-4 pt-3 pb-safe">
+    <button onclick="openBooking()" class="w-full bg-caramel text-offwhite py-4 text-xs uppercase tracking-[0.25em] active:scale-[0.99] transition">
+      Agendar agora
+    </button>
+  </div>
+
+  <!-- ============ PERFIL DO PROFISSIONAL ============ -->
+  <div id="profileView" class="fixed inset-0 z-[55] hidden bg-offwhite overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="profName">
+
+    <!-- Barra superior -->
+    <div class="sticky top-0 z-20 bg-charcoal/80 backdrop-blur-md border-b border-white/10">
+      <div class="max-w-6xl mx-auto px-5 lg:px-8 h-16 flex items-center justify-between">
+        <button onclick="closeProfile()" class="flex items-center gap-2 text-[11px] uppercase tracking-[0.25em] text-sand hover:text-gold transition">
+          <span class="text-lg leading-none">&larr;</span> Voltar ao site
+        </button>
+        <span class="font-serif text-lg text-offwhite hidden sm:block">Diego <span class="text-gold italic">Hair &amp; Co.</span></span>
+      </div>
+    </div>
+
+    <!-- Hero do perfil -->
+    <section class="relative bg-charcoal overflow-hidden">
+      <img src="salao.png" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover opacity-30">
+      <div class="absolute inset-0 bg-charcoal/50"></div>
+
+      <div class="relative z-10 max-w-6xl mx-auto px-5 lg:px-8 py-16 lg:py-24 flex flex-col md:flex-row items-center md:items-end gap-10 text-center md:text-left">
+        <img id="profImg" src="" alt="" class="w-40 h-40 sm:w-56 sm:h-56 rounded-full object-cover ring-4 ring-gold/60 shadow-2xl">
+        <div>
+          <p id="profRole" class="text-gold uppercase tracking-[0.3em] text-[11px] mb-4"></p>
+          <h2 id="profName" class="font-serif text-5xl sm:text-6xl text-offwhite leading-[1.05]"></h2>
+          <a id="profIg" href="#" target="_blank" rel="noopener" class="inline-block mt-4 text-sm text-sand/90 hover:text-gold transition"></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Destaques -->
+    <section class="bg-caramel text-offwhite">
+      <div class="max-w-6xl mx-auto px-5 lg:px-8 py-10 grid grid-cols-2 gap-6 text-center">
+        <div>
+          <p class="font-serif text-4xl" id="profYears"></p>
+          <p class="text-[11px] uppercase tracking-[0.25em] mt-2 text-offwhite/80">de atuação</p>
+        </div>
+        <div>
+          <p class="font-serif text-4xl" id="profCount"></p>
+          <p class="text-[11px] uppercase tracking-[0.25em] mt-2 text-offwhite/80">serviços</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre -->
+    <section class="py-20 lg:py-24 px-5 lg:px-8 bg-sand">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-caramel uppercase tracking-[0.3em] text-[11px] mb-3">Sobre</p>
+        <h3 class="font-serif text-4xl sm:text-5xl mb-8">Um trabalho feito com cuidado</h3>
+        <p id="profBio" class="text-charcoal/80 leading-relaxed text-lg"></p>
+      </div>
+    </section>
+
+    <!-- Serviços do profissional -->
+    <section class="py-20 lg:py-24 px-5 lg:px-8 bg-offwhite">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="text-caramel uppercase tracking-[0.3em] text-[11px] mb-3">Cardápio</p>
+          <h3 class="font-serif text-4xl sm:text-5xl">Serviços</h3>
+        </div>
+        <div id="profServices" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="relative bg-charcoal py-20 px-5 text-center overflow-hidden">
+      <img src="salao.png" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover opacity-20">
+      <div class="relative z-10">
+        <p class="text-gold uppercase tracking-[0.3em] text-[11px] mb-4">Agenda</p>
+        <h3 class="font-serif text-4xl sm:text-5xl text-offwhite mb-10">Reserve seu horário</h3>
+        <button id="profBook" class="bg-gold text-charcoal px-10 py-4 text-xs uppercase tracking-[0.25em] font-medium hover:bg-offwhite transition">
+          Ver agenda
+        </button>
+      </div>
+    </section>
+
+    <footer class="bg-charcoal text-sand/80 pt-14 pb-32 md:pb-14 px-5 lg:px-8">
+      &copy; <span id="anoPerfil"></span> Diego Hair &amp; Co. · Edifício Orbe, Sala 716, Parque Una · Pelotas, RS
+    </footer>
+  </div>
+
+  <!-- ============ MODAL DE AGENDAMENTO (simulação) ============ -->
+  <div id="bookingModal" class="fixed inset-0 z-[60] hidden items-end sm:items-center justify-center bg-charcoal/70 backdrop-blur-sm sm:p-6" role="dialog" aria-modal="true" aria-labelledby="bookingTitle">
+    <div class="bg-offwhite w-full sm:max-w-md max-h-[92svh] overflow-y-auto p-6 sm:p-8 border-t-4 border-gold sm:border-t-0 sm:border border-charcoal/10">
+      <div class="flex justify-between items-start mb-6">
+        <h2 id="bookingTitle" class="font-serif text-3xl">Reserve seu horário</h2>
+        <button onclick="closeBooking()" aria-label="Fechar" class="text-charcoal/60 hover:text-charcoal text-2xl leading-none">&times;</button>
+      </div>
+
+      <form id="bookingForm" onsubmit="confirmBooking(event)" class="space-y-5">
+        <div>
+          <label for="bkService" class="block text-[11px] uppercase tracking-[0.2em] text-charcoal/70 mb-2">Serviço</label>
+          <select id="bkService" required class="w-full bg-white border border-sand px-4 py-3 focus:outline-none focus:border-caramel"></select>
+        </div>
+        <div>
+          <label for="bkPro" class="block text-[11px] uppercase tracking-[0.2em] text-charcoal/70 mb-2">Profissional</label>
+          <select id="bkPro" required class="w-full bg-white border border-sand px-4 py-3 focus:outline-none focus:border-caramel">
+            <option value="Diego · @diegohair.co">Diego · @diegohair.co</option>
+            <option value="Paola Pinheiro · @ppinheiro_beauty">Paola Pinheiro · @ppinheiro_beauty</option>
+          </select>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label for="bkDate" class="block text-[11px] uppercase tracking-[0.2em] text-charcoal/70 mb-2">Data</label>
+            <input id="bkDate" type="date" required class="w-full bg-white border border-sand px-4 py-3 focus:outline-none focus:border-caramel">
+          </div>
+          <div>
+            <label for="bkTime" class="block text-[11px] uppercase tracking-[0.2em] text-charcoal/70 mb-2">Horário</label>
+            <select id="bkTime" required class="w-full bg-white border border-sand px-4 py-3 focus:outline-none focus:border-caramel">
+              <option>09:00</option><option>10:30</option><option>13:00</option><option>14:30</option><option>16:00</option><option>17:30</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label for="bkName" class="block text-[11px] uppercase tracking-[0.2em] text-charcoal/70 mb-2">Seu nome</label>
+          <input id="bkName" type="text" required placeholder="Como devemos te chamar?" class="w-full bg-white border border-sand px-4 py-3 focus:outline-none focus:border-caramel">
+        </div>
+        <button type="submit" class="w-full bg-charcoal text-offwhite py-4 text-xs uppercase tracking-[0.25em] hover:bg-caramel transition">
+          Confirmar agendamento
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast de confirmação -->
+  <div id="toast" class="fixed top-24 left-1/2 -translate-x-1/2 z-[70] hidden bg-charcoal text-offwhite px-6 py-4 text-sm shadow-xl max-w-[90vw] text-center border-l-4 border-gold"></div>
+
+  <script>
+    // ----- Serviços oficiais -----
+    const services = [
+      { cat: 'maquiagem', name: 'Maquiagem Social / Noite', pro: 'Paola Pinheiro · @ppinheiro_beauty', price: 'R$ 180,00',
+        desc: 'Pele blindada, super resistente e personalizada conforme o evento.' },
+      { cat: 'cabelo', name: 'Escova Lisa', pro: 'Diego · @diegohair.co', price: 'A partir de R$ 80,00',
+        desc: 'Escova lisa com acabamento impecável.' },
+      { cat: 'cabelo', name: 'Escova com Babyliss', pro: 'Diego · @diegohair.co', price: 'R$ 150,00',
+        desc: 'Escova com babyliss para movimento e brilho.' },
+      { cat: 'cabelo', name: 'Penteados', pro: 'Diego · @diegohair.co', price: 'A partir de R$ 180,00',
+        desc: 'Penteados para o seu dia ou para eventos especiais.' }
+    ];
+
+    // ----- Dados dos profissionais -----
+    const professionals = {
+      diego: {
+        name: 'Diego',
+        role: 'Cabeleireiro',
+        ig: 'diegohair.co',
+        img: 'diego.png',
+        booking: 'Diego · @diegohair.co',
+        years: 'X', // <- preencha com o tempo de atuação
+        bio: 'Escovas, penteados e transformações com acabamento impecável para o seu dia a dia e para eventos especiais. Trabalha com foco em um resultado natural, respeitando o tipo de cabelo e o estilo de cada cliente.'
+      },
+      paola: {
+        name: 'Paola Pinheiro',
+        role: 'Maquiadora',
+        ig: 'ppinheiro_beauty',
+        img: 'paola.png',
+        booking: 'Paola Pinheiro · @ppinheiro_beauty',
+        years: 'X', // <- preencha com o tempo de atuação
+        bio: 'Especialista em maquiagem com pele blindada, super resistente e com atendimento personalizado conforme o seu evento. Cada make é pensada para o momento, da produção do dia a dia às noivas e festas.'
+      }
+    };
+
+    // ----- SEO: títulos e descrições por perfil -----
+    const defaultSeo = {
+      title: document.title,
+      desc: document.querySelector('meta[name="description"]').getAttribute('content')
+    };
+
+    const seoProfiles = {
+      diego: {
+        title: 'Diego, Cabeleireiro em Pelotas | Diego Hair & Co.',
+        desc: 'Diego, cabeleireiro em Pelotas, RS: escova lisa, escova com babyliss e penteados. Veja valores, descrição e agende seu horário.'
+      },
+      paola: {
+        title: 'Paola Pinheiro, Maquiadora em Pelotas | Diego Hair & Co.',
+        desc: 'Paola Pinheiro, maquiadora em Pelotas, RS: maquiagem social e de noite com pele blindada. Veja valores e agende seu horário.'
+      }
+    };
+
+    function setSeo(title, desc) {
+      document.title = title;
+      document.querySelector('meta[name="description"]').setAttribute('content', desc);
+    }
+
+    // ----- Renderização dos cards de serviço -----
+    function renderServices() {
+      const containers = { cabelo: 'grid-cabelo', maquiagem: 'grid-maquiagem' };
+      services.forEach((s, i) => {
+        const card = document.createElement('div');
+        card.className = 'bg-white p-6 border border-sand flex flex-col justify-between hover:border-caramel/60 transition';
+        card.innerHTML = `
+          <div>
+            <h4 class="font-serif text-2xl mb-2">${s.name}</h4>
+            <p class="text-sm text-charcoal/75 leading-relaxed mb-3">${s.desc}</p>
+            <p class="text-[11px] uppercase tracking-[0.2em] text-charcoal/60">${s.pro}</p>
+          </div>
+          <div class="flex items-end justify-between mt-8 gap-4">
+            <span class="text-lg font-medium text-caramel">${s.price}</span>
+            <button onclick="selectService(${i})" class="border border-charcoal px-5 py-2.5 text-[11px] uppercase tracking-[0.2em] hover:bg-charcoal hover:text-offwhite transition">Selecionar</button>
+          </div>`;
+        document.getElementById(containers[s.cat]).appendChild(card);
+      });
+    }
+
+    // ----- Perfil do profissional -----
+    function openProfile(id) {
+      setSeo(seoProfiles[id].title, seoProfiles[id].desc);
+      const p = professionals[id];
+      const list = services
+        .map((s, i) => ({ ...s, index: i }))
+        .filter(s => s.pro === p.booking);
+
+      document.getElementById('profImg').src = p.img;
+      document.getElementById('profImg').alt = p.name;
+      document.getElementById('profRole').textContent = p.role;
+      document.getElementById('profName').textContent = p.name;
+      document.getElementById('profIg').textContent = '@' + p.ig;
+      document.getElementById('profIg').href = 'https://instagram.com/' + p.ig;
+      document.getElementById('profYears').textContent = p.years + ' anos';
+      document.getElementById('profCount').textContent = list.length;
+      document.getElementById('profBio').textContent = p.bio;
+      document.getElementById('profBook').onclick = () => { closeProfile(); openBooking(p.booking); };
+
+      const wrap = document.getElementById('profServices');
+      wrap.innerHTML = '';
+      list.forEach(s => {
+        const card = document.createElement('div');
+        card.className = 'bg-white p-6 border border-sand flex flex-col justify-between hover:border-caramel/60 transition';
+        card.innerHTML = `
+          <div>
+            <h4 class="font-serif text-2xl mb-2">${s.name}</h4>
+            <p class="text-sm text-charcoal/75 leading-relaxed">${s.desc}</p>
+          </div>
+          <div class="flex items-end justify-between mt-6 gap-4">
+            <span class="text-lg font-medium text-caramel">${s.price}</span>
+            <button class="border border-charcoal px-5 py-2.5 text-[11px] uppercase tracking-[0.2em] hover:bg-charcoal hover:text-offwhite transition">Selecionar</button>
+          </div>`;
+        card.querySelector('button').onclick = () => { closeProfile(); selectService(s.index); };
+        wrap.appendChild(card);
+      });
+
+      const view = document.getElementById('profileView');
+      view.classList.remove('hidden');
+      view.scrollTop = 0;
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeProfile() {
+      document.getElementById('profileView').classList.add('hidden');
+      document.body.style.overflow = '';
+      setSeo(defaultSeo.title, defaultSeo.desc);
+    }
+
+    // ----- Menu mobile (hamburguer) -----
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      if (menu.classList.contains('hidden')) openMenu(); else closeMenu();
+    }
+    function openMenu() {
+      document.getElementById('mobileMenu').classList.remove('hidden');
+      document.getElementById('iconOpen').classList.add('hidden');
+      document.getElementById('iconClose').classList.remove('hidden');
+      document.getElementById('menuBtn').setAttribute('aria-expanded', 'true');
+    }
+    function closeMenu() {
+      document.getElementById('mobileMenu').classList.add('hidden');
+      document.getElementById('iconOpen').classList.remove('hidden');
+      document.getElementById('iconClose').classList.add('hidden');
+      document.getElementById('menuBtn').setAttribute('aria-expanded', 'false');
+    }
+
+    // ----- Modal de agendamento (simulação) -----
+    function fillServiceSelect() {
+      const sel = document.getElementById('bkService');
+      sel.innerHTML = '';
+      services.forEach(s => {
+        const opt = document.createElement('option');
+        opt.value = s.name;
+        opt.textContent = `${s.name} · ${s.price}`;
+        sel.appendChild(opt);
+      });
+    }
+
+    function openBooking(pro = null, serviceName = null) {
+      fillServiceSelect();
+      if (serviceName) document.getElementById('bkService').value = serviceName;
+      if (pro) document.getElementById('bkPro').value = pro;
+
+      const modal = document.getElementById('bookingModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => document.getElementById('bkDate').focus(), 50);
+    }
+
+    function closeBooking() {
+      const modal = document.getElementById('bookingModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    function selectService(index) {
+      const s = services[index];
+      openBooking(s.pro, s.name);
+    }
+
+    function confirmBooking(e) {
+      e.preventDefault();
+      const service = document.getElementById('bkService').value;
+      const pro = document.getElementById('bkPro').value;
+      const date = document.getElementById('bkDate').value;
+      const time = document.getElementById('bkTime').value;
+      const name = document.getElementById('bkName').value;
+
+      const [y, m, d] = date.split('-');
+      showToast(`Obrigado, ${name}! Pré-agendamento de ${service} com ${pro} em ${d}/${m}/${y} às ${time} (simulação).`);
+
+      document.getElementById('bookingForm').reset();
+      closeBooking();
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.remove('hidden');
+      clearTimeout(window._toastTimer);
+      window._toastTimer = setTimeout(() => t.classList.add('hidden'), 4500);
+    }
+
+    // ----- Eventos globais -----
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') { closeBooking(); closeMenu(); closeProfile(); }
+    });
+
+    window.addEventListener('scroll', () => {
+      document.getElementById('header').classList.toggle('shadow-lg', window.scrollY > 10);
+    }, { passive: true });
+
+    window.matchMedia('(min-width: 1024px)').addEventListener('change', e => { if (e.matches) closeMenu(); });
+
+    document.getElementById('ano').textContent = new Date().getFullYear();
+    document.getElementById('anoPerfil').textContent = new Date().getFullYear();
+    renderServices();
+  </script>
+</body>
+</html>
