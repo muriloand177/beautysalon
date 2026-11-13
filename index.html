@@ -14,27 +14,24 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-  <link rel="canonical" href="https://muriloand177.github.io/salaopage/">
-<meta name="robots" content="index, follow">
+  <!-- Open Graph (WhatsApp, Facebook, Instagram) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Diego Hair & Co.">
+  <meta property="og:title" content="Diego Hair & Co. | Cabeleireiro e Maquiagem em Pelotas, RS">
+  <meta property="og:description" content="Escovas, penteados e maquiagem social e de noite em Pelotas, RS. Agende seu horário.">
+  <meta property="og:url" content="https://muriloand177.github.io/salaopage/">
+  <meta property="og:image" content="https://muriloand177.github.io/salaopage/salao.png">
+  <meta property="og:image:secure_url" content="https://muriloand177.github.io/salaopage/salao.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Interior do salão Diego Hair & Co. em Pelotas">
 
-<!-- Open Graph (WhatsApp, Facebook, Instagram) -->
-<meta property="og:type" content="website">
-<meta property="og:locale" content="pt_BR">
-<meta property="og:site_name" content="Diego Hair & Co.">
-<meta property="og:title" content="Diego Hair & Co. | Cabeleireiro e Maquiagem em Pelotas, RS">
-<meta property="og:description" content="Escovas, penteados e maquiagem social e de noite em Pelotas, RS. Agende seu horário.">
-<meta property="og:url" content="https://muriloand177.github.io/salaopage/">
-<meta property="og:image" content="https://muriloand177.github.io/salaopage/salao.png">
-<meta property="og:image:secure_url" content="https://muriloand177.github.io/salaopage/salao.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Interior do salão Diego Hair & Co. em Pelotas">
-
-<!-- Twitter / X -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Diego Hair & Co. | Pelotas, RS">
-<meta name="twitter:description" content="Cabelo e maquiagem de alto padrão em Pelotas, RS.">
-<meta name="twitter:image" content="https://muriloand177.github.io/salaopage/salao.png">
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Diego Hair & Co. | Pelotas, RS">
+  <meta name="twitter:description" content="Cabelo e maquiagem de alto padrão em Pelotas, RS.">
+  <meta name="twitter:image" content="https://muriloand177.github.io/salaopage/salao.png">
 
   <!-- Dados estruturados (Google) -->
   <script type="application/ld+json">
@@ -87,6 +84,17 @@
     html { scroll-behavior: smooth; scroll-padding-top: 90px; }
     body { font-family: Inter, sans-serif; }
     .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+
+    /* Desktop: aumenta a escala de tudo (textos, imagens, cards, espaçamentos) */
+    @media (min-width: 1024px) {
+      html { font-size: 18px; }
+      /* os rótulos pequenos usam px fixo, então precisam de ajuste próprio */
+      .text-\[11px\] { font-size: 13px; }
+    }
+    @media (min-width: 1280px) {
+      html { font-size: 20px; }
+      .text-\[11px\] { font-size: 14px; }
+    }
   </style>
 </head>
 
